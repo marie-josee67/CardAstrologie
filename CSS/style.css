@@ -1,0 +1,82 @@
+*{ /* l'étoile indique que toutes les balises de la page devront respecter cette règle*/
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    }
+#container { /* le conteneur*/
+    padding:20px;
+    min-height:100vh; /* 100% du conteneur*/
+    display:flex; /*une carte a coter de l'autre*/
+    justify-content: center;/* alignement horizontal*/
+    align-items: center;/* alignement vertical*/
+    gap: 20px;/* ecart entre card*/
+    background: rgba(32, 119, 153, 0.548);/* couleur de fond*/
+    flex-wrap: wrap;/* permet d'adapter à la taille de l'écran seulement si display est flex sinon marche pas*/ 
+}
+.card{
+    background: rgb(183, 217, 236);
+    width: 250px;
+    /*border:5px solid rgb(226, 66, 114);  enlever à la fin*/
+    border-radius: 30px;/* arrondi des anglles si 500 % cela fait un rond*/
+    overflow: hidden; /* permet de masquer tout ce qui "déborde" de la carte */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; /* ombre portée sur la carte */
+    transition: 0.5s;
+    filter:contrast(5%);/*La fonction CSS contrast() permet d'ajuster le contraste d'une image. Le résultat de cette fonction est une valeur de type <filter-function>.*/
+}
+.card:hover{
+    filter: contrast(1);/* retire le contraste lorsque la souris passe*/
+}
+.card:hover .coeur {
+    left: 0;
+    opacity: 1;
+}
+.card:hover .card-header img {
+    transform: scale(1.3); /* zoom */
+    filter: grayscale(0); /* couleur (noir et blanc = 0) */
+}
+
+.card-header{
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+.card-header img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; si elle sont pas identique en taille */
+    filter: grayscale(1); /* noir et blanc */
+    transition: 0.5s;
+}
+.card-text{
+    text-align: justify;
+    padding:30px/*marge interne*/
+}
+.card-text h1{
+    margin-bottom: 10px;/* ecrat du titre par rapport au texte */
+    font-style: 25px;
+    font-weight: 700;
+}
+.card-text p {
+    font-size: 14px;
+    color:rgb(77, 73, 73);
+    font-weight: 300;
+}
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(214, 113, 172);
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: -40px;
+    transition: 1s;
+    opacity: 0;
+}
+.coeur a {
+    color: #fff;
+}
