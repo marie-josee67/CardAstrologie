@@ -3,17 +3,19 @@
     padding:0;
     box-sizing: border-box;
     font-family: "Poppins";
-    }
+}
+
 #container { /* le conteneur*/
     padding:20px;
     min-height:100vh; /* 100% du conteneur*/
     display:flex; /*une carte a coter de l'autre*/
     justify-content: center;/* alignement horizontal*/
     align-items: center;/* alignement vertical*/
-    gap: 20px;/* ecart entre card*/
+    gap: 20px;/* écart entre card*/
     background: rgba(32, 119, 153, 0.548);/* couleur de fond*/
     flex-wrap: wrap;/* permet d'adapter à la taille de l'écran seulement si display est flex sinon marche pas*/ 
 }
+
 .card{
     background: rgb(183, 217, 236);
     width: 250px;
@@ -24,16 +26,22 @@
     transition: 0.5s;
     filter:contrast(5%);/*La fonction CSS contrast() permet d'ajuster le contraste d'une image. Le résultat de cette fonction est une valeur de type <filter-function>.*/
 }
+
 .card:hover{
     filter: contrast(1);/* retire le contraste lorsque la souris passe*/
 }
-.card:hover .coeur {
+
+/*.card:hover .coeur {
     left: 0;
     opacity: 1;
-}
-.card:hover .card-header img {
+}*/
+
+.card:hover {
     transform: scale(1.3); /* zoom */
-    filter: grayscale(0); /* couleur (noir et blanc = 0) */
+    margin:10px;
+    z-index: 1; /* Permet de mettre a un plan au-desssus des autres cartes */
+    transition: 0.5s; /* transition de l'animation */
+    /*filter: grayscale(0); /* couleur (noir et blanc = 0) */
 }
 
 .card-header{
@@ -41,14 +49,16 @@
     height: 150px;
     overflow: hidden;
 }
+
 .card-header img{
     width:100%;
     height: 100%;
     object-fit: cover;
     /* object-position: center; si elle sont pas identique en taille */
-    filter: grayscale(1); /* noir et blanc */
+    /*filter: grayscale(1); /* noir et blanc */
     transition: 0.5s;
 }
+
 .card-text{
     text-align: justify;
     padding:30px/*marge interne*/
@@ -58,12 +68,14 @@
     font-style: 25px;
     font-weight: 700;
 }
+
 .card-text p {
     font-size: 14px;
     color:rgb(77, 73, 73);
     font-weight: 300;
 }
-.coeur {
+
+/*.coeur {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +89,7 @@
     transition: 1s;
     opacity: 0;
 }
+
 .coeur a {
     color: #fff;
-}
+}*/
