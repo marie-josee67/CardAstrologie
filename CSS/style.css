@@ -12,9 +12,43 @@
     justify-content: center;/* alignement horizontal*/
     align-items: center;/* alignement vertical*/
     gap: 20px;/* écart entre card*/
-    background: rgba(4, 4, 4, 0.548);/* couleur de fond*/
+    /*background: rgba(9, 91, 207, 0.966);/* couleur de fond*/
     flex-wrap: wrap;/* permet d'adapter à la taille de l'écran seulement si display est flex sinon marche pas*/ 
 }
+
+/* ************************************** Fond d'écran ****************************************** */
+
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(19, 87, 123) 50%, rgb(19, 115, 174) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+  
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:6s;
+}
+  
+.bg3 {
+    animation-duration:7s;
+}
+   
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+}
+
+/* ************************************** Cartes ****************************************** */
 
 .card{
     background: rgb(183, 217, 236);
@@ -73,6 +107,8 @@
     color:rgb(77, 73, 73);
     font-weight: 300;
 }
+
+/* ************************************** Coeur d'angle cartes ****************************************** */
 
 /*.coeur {
     display: flex;
